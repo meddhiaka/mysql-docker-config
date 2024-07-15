@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:9.0
+    environment:
+      MYSQL_USER: "dhia"
+      MYSQL_PASSWORD: "1234"
+      MYSQL_DATABASE: "test99"
+      MYSQL_ROOT_PASSWORD: "root"
+    volumes:
+      - ./db_temp_files:/var/lib/mysql
