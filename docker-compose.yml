@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:9.0
+    container_name: mysql-custom
+    environment:
+      MYSQL_USER: "dhia"
+      MYSQL_PASSWORD: "1234"
+      MYSQL_DATABASE: "test99"
+      MYSQL_ROOT_PASSWORD: "root"
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./db_temp_files:/var/lib/mysql
+
+# docker-compose exec db mysql -udhia -p1234 test99
+# inside the root file of compose :)
